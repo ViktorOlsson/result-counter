@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+##
+To start the application use the command docker build -t app . && docker run --name app -p 4200:4200 app this command requires you to use docker.
+It is also possible to use the command ng serve to start but that requires the installation of node(version 18), angular cli(latest) and docker. My recommendation is to use the first command with docker to run the application.

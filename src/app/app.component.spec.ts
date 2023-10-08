@@ -1,15 +1,25 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './components/card/card.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        SharedModule,
+        HttpClientModule,
+        BrowserAnimationsModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        ToolbarComponent,
+        CardComponent
       ],
     }).compileComponents();
   });
@@ -26,10 +36,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('app');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('app app is running!');
-  });
 });

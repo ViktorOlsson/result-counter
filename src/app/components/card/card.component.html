@@ -1,0 +1,19 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Resultat räknare</mat-card-title>
+    <mat-card-subtitle>Ange dina sök parametrar nedan.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Sök parameter</mat-label>
+        <input matInput placeholder="Enter search query" name="searchTerm" [(ngModel)]="searchTerm">
+      </mat-form-field>
+    </form>
+    <button mat-button (click)="onClickFetchData()" [disabled]="!searchTerm.length">Hämta resultat</button>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <p class="result">Antal träffar: {{ this.resultCount || 0 }}</p>
+  </mat-card-actions>
+</mat-card>
